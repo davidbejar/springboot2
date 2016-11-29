@@ -1,4 +1,4 @@
-import org.eclipse.jetty.util.Jetty;
+import org.apache.catalina.util.ServerInfo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringBootVersion;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -14,7 +14,8 @@ public class Example {
 	String home() {
 		return new StringBuilder("Running Spring Boot version: ").append(SpringBootVersion.getVersion())
 				.append(" , Spring Framework version: ").append(SpringVersion.getVersion())
-				.append(" and Jetty version: ").append(Jetty.VERSION).toString();
+				.append(" and Tomcat Server info, number and built: ").append(ServerInfo.getServerInfo()).append(" ")
+				.append(ServerInfo.getServerNumber()).append(" ").append(ServerInfo.getServerBuilt()).toString();
 	}
 
 	public static void main(String[] args) throws Exception {
