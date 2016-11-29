@@ -1,6 +1,7 @@
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringBootVersion;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.core.SpringVersion;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,7 +11,8 @@ public class Example {
 
 	@RequestMapping("/")
 	String home() {
-		return new StringBuilder("Running Spring Boot version: ").append(SpringBootVersion.getVersion()).toString();
+		return new StringBuilder("Running Spring Boot version: ").append(SpringBootVersion.getVersion())
+				.append(" and Spring Framework version: ").append(SpringVersion.getVersion()).toString();
 	}
 
 	public static void main(String[] args) throws Exception {
